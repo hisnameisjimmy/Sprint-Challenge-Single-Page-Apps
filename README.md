@@ -27,6 +27,8 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
+The main benefit of client-side routing is speed. You remove server requests from the equation, which makes it so you don't have to wait for the server. Everything can be executed on the client machine. You can run into performance issues here if you have a ton of javascript, but this perceivable speed difference makes webapps more like native apps.
+
 > Answer:
 
 ## Project Set Up
