@@ -6,6 +6,8 @@ import SearchForm from "./SearchForm";
 export default function CharacterList(props) {
   // TODO: Add useState to track data from useEffect
   const [characters, setCharacters] = useState([]);
+
+  const [characterSearch, setCharacterSearch] = useState([]);
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
@@ -20,11 +22,20 @@ export default function CharacterList(props) {
       })
   }, []);
 
+  const characterNameArray = searchString => {
+    const items = characters.filter(term =>
+      term.name.toLowerCase().includes(searchString.toLowerCase())
+    );
+    setCharacterSearch(items);
+    console.log(items);
+  };
+
   return (
     <section className="character-list">
       <h2>TODO: `array.map()` over your state here!</h2>
-      <SearchForm />
-      {characters.map(thing => {
+      <SearchForm func={characterNameArray} />
+      {
+        characterSearch.map(thing => {
         return (
           <CharacterCard
             name={thing.name}
@@ -35,8 +46,9 @@ export default function CharacterList(props) {
             gender={thing.gender}
             location={thing.location}
           />
-        )
-      })}
+        );
+      })
+      }
     </section>
   );
 }
