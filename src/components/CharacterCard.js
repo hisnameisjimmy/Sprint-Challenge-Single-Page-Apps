@@ -2,28 +2,26 @@ import React from "react";
 
 export default function CharacterCard(props) {
   return (
-    <div class="tile">
+    <div className="tile">
       <div key={props.id}>
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
+        <div className="card">
+          <div className="card-image">
+            <figure className="image is-4by3">
               <img src={props.image} alt="Placeholder image" />
             </figure>
           </div>
-          <div class="card-content">
-            <div class="media">
-              <div class="media-content">
-                <p class="title is-4">{props.name}</p>
-                <p class="subtitle is-6">{props.species}</p>
+          <div className="card-content">
+            <div className="media">
+              <div className="media-content">
+                <p className="title is-4">{props.name}</p>
+                <p className="subtitle is-6">{props.species}</p>
               </div>
             </div>
 
-            <div class="content">
+            <div className="content">
               <ul>
                 <li>{props.gender}</li>
-                <li>
-                  <li>{props.status}</li>
-                </li>
+                <li>{props.status}</li>
               </ul>
             </div>
           </div>
